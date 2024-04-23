@@ -11,13 +11,13 @@ def main():
     args= parser.parse_args()
     user_input= args.input
     
-    if validate_length(user_input):
+    if validate_input_length(user_input):
       branding_snippet=generate_branding_snippet(user_input)
       keywords=generate_keywords(user_input)
     else:
        raise ValueError(F"input length is too long, it sould be equal or less than {MAX_INPUT_LENGTH}")
 
-def validate_length(prompt : str) -> bool:
+def validate_input_length(prompt : str) -> bool:
   return len(prompt)<=MAX_INPUT_LENGTH
 
 def generate_branding_snippet(prompt: str) -> str:
@@ -39,10 +39,10 @@ def generate_branding_snippet(prompt: str) -> str:
   # check if the sentence is completed or not
   is_sentence_completed= True if branding_text_without_quotes[-1] in [".","?", "!"] else False
   if not is_sentence_completed:
-    branding_text +="..."
+    branding_text_without_quotes +="..."
   
-  print(f"branding_snippet: {branding_text}")
-  return branding_text
+  print(f"branding_snippet: {branding_text_without_quotes}")
+  return branding_text_without_quotes
 
 def generate_keywords(prompt: str) -> list[str]:
   enriched_prompt= f"Generate related branding keywords for {prompt} as a comma seperated values"
@@ -62,7 +62,6 @@ def generate_keywords(prompt: str) -> list[str]:
   lowercase_keywords_list= lowercase_keywords.split(",")
   print(f"keywords: {lowercase_keywords_list}")
   return lowercase_keywords_list
-
 
 if __name__ == "__main__":
   main()
