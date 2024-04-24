@@ -1,10 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from copykitt import generate_branding_snippet, generate_keywords
+from mangum import Mangum
 
 app = FastAPI()
 
 MAX_INPUT_LENGTH = 32
-
+handler = Mangum(app)
 def validate_input_length(prompt:str) -> bool:
     if len(prompt)<=MAX_INPUT_LENGTH:
         pass
