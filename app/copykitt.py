@@ -60,6 +60,8 @@ def generate_keywords(prompt: str) -> list[str]:
   keywords=completion.choices[0].message.content
   lowercase_keywords= keywords.lower()
   lowercase_keywords_list= lowercase_keywords.split(",")
+  lowercase_keywords_list = [item.strip() for item in lowercase_keywords_list if item]
+
   print(f"keywords: {lowercase_keywords_list}")
   return lowercase_keywords_list
 

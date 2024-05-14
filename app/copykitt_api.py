@@ -4,6 +4,18 @@ from mangum import Mangum
 
 app = FastAPI()
 
+
+# Allow requests from all origins during development
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 MAX_INPUT_LENGTH = 32
 handler = Mangum(app)
 def validate_input_length(prompt:str) -> bool:
@@ -15,6 +27,7 @@ def validate_input_length(prompt:str) -> bool:
 @app.get("/generate_snippet")
 async def generate_snippet_api(prompt: str):
     validate_input_length(prompt)
+    
     snippet=generate_branding_snippet(prompt)
     return {"snippet": snippet, "keywords":[]}
 
