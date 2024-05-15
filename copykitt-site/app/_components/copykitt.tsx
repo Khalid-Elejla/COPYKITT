@@ -10,7 +10,8 @@ import logo from "../public/copykitt_logo.svg"
 const Copykitt: React.FC=()=>{
 
     const CHARACTER_LIMIT:number =32
-    const ENDPOINT: string="http://127.0.0.1:8000/generate_snippet_and_keywords";
+    //const ENDPOINT: string="http://127.0.0.1:8000/generate_snippet_and_keywords"; for local host
+    const ENDPOINT: string="https://copykitt.onrender.com/generate_snippet_and_keywords" //for render.com hostting service
 
     const [prompt, setPrompt] = React.useState("");
     const [snippet,setSnippet]=React.useState("");
