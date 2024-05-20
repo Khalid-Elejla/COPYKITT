@@ -9,9 +9,7 @@ SaaS apps.
 Try out the demo here (the first time you try this web app could take a few seconds more to work): 
 https://copykitt-theta.vercel.app/
 
-![copykitt_results_image](./images/copykitt_results.png)
 
-## Lambda Layer ZIP
 
 I've decided to deploy the backend at render.com
 so, in case hosting your backsite in different hosting service you can modify Entry point in copykitt-site\app\page.tsx
@@ -42,12 +40,5 @@ also copykitt_infra contains the required files to build the infra structure for
 
 I've also added each part of the tutorial as a separate commit so it's easier to follow.
 
-| Checkpoint                  |                                                              |
-| --------------------------- | ------------------------------------------------------------ |
-| Python app to call OpenAI   | [1e88180](https://github.com/pixegami/copykitt-tutorial/commit/1e88180dc55b5c10c869c32fe7bd168412a3c187) |
-| Add FastAPI to Python app   | [aabaa16](https://github.com/pixegami/copykitt-tutorial/commit/aabaa16b036a921c7787dfabe6d6e80b65a7549c) |
-| Host API on AWS             | [174d14f](https://github.com/pixegami/copykitt-tutorial/commit/174d14f8f5477c7b928445088951b2135f123a72) |
-| Create NextJS/React website | [d1007b3](https://github.com/pixegami/copykitt-tutorial/commit/d1007b314a754f84573bf2b7281ae5ebebeb3d29) |
-| Styling with TailwindCSS    | [818d04b](https://github.com/pixegami/copykitt-tutorial/commit/818d04bc670d23db24f95d1647aaa1fcbf90b474) |
 
 ## 
