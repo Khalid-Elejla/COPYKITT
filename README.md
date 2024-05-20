@@ -36,9 +36,5 @@ also copykitt_infra contains the required files to build the infra structure for
 | Styling   | [TailwindCSS](https://tailwindcss.com/)                      |
 | Hosting   | [Vercel](https://vercel.com)                                 |
 
-## Tutorial Checkpoints
-
-I've also added each part of the tutorial as a separate commit so it's easier to follow.
-
 
 ## 
